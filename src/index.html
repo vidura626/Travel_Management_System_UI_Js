@@ -24,67 +24,140 @@
 </section>
 
 
-<section id="section-login">
-    <section class="bg-gray-50 dark:bg-gray-900">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <!-- <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                 <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
-                 Flowbite
-             </a>-->
-            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                        Sign in to your account
-                    </h1>
-                    <form class="space-y-4 md:space-y-6" action="#">
-                        <div>
-                            <label for="form_login_username"
-                                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                            <input type="text" name="username" id="form_login_username"
-                                   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                   placeholder="username" required="">
-                        </div>
-                        <div>
-                            <label for="form_login_password"
-                                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                            <input type="password" name="password" id="form_login_password" placeholder="••••••••"
-                                   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                   required="">
-                        </div>
-                        <!-- <div class="flex items-center justify-between">
-                             <div class="flex items-start">
-                                 <div class="flex items-center h-5">
-                                     <input id="remember" aria-describedby="remember" type="checkbox"
-                                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                                            required="">
-                                 </div>
-                                 <div class="ml-3 text-sm">
-                                     <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
-                                 </div>
-                             </div>
-                             <a href="#"
-                                class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot
-                                 password?</a>
-                         </div>-->
-                        <button type="button"
-                                id="login_button"
-                                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none
-                                focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                                dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                            Sign in
-                        </button>
-                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                            Don’t have an account yet?
-                            <a href="#" class="font-medium text-primary-600 hover:underline
-                            dark:text-primary-500">Sign up</a>
-                        </p>
-                    </form>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="flex items-center justify-between pb-4 bg-white dark:bg-gray-900">
+        <div>
+            <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction"
+                    class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                    type="button">
+                <span class="sr-only">Action button</span>
+                Action
+                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="m1 1 4 4 4-4"/>
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownAction"
+                 class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownActionButton">
+                    <li>
+                        <a href="#"
+                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reward</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Promote</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                           class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Activate
+                            account</a>
+                    </li>
+                </ul>
+                <div class="py-1">
+                    <a href="#"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete
+                        User</a>
                 </div>
             </div>
         </div>
-    </section>
-</section>
-    <!--User Registration Form-->
+        <label for="table-search-users" class="sr-only">Search</label>
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input type="text" id="table-search-users"
+                   class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   placeholder="Search for users">
+        </div>
+    </div>
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th scope="col" class="p-4">
+                <div class="flex items-center">
+                    <label>Id</label>
+                </div>
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Address / Contact
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Create / Modified
+            </th>
+            <th scope="col" class="px-6 py-3">
+                NIC / Passport
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Dob / Gender
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Remarks
+            </th>
+        </tr>
+        </thead>
+        <tbody id="table_user_body">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="w-4 p-4">
+                <label>1</label>
+            </td>
+            <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Jese image">
+                <div class="pl-3">
+                    <div class="text-base font-semibold">Vidura Rames Wijesinghe</div>
+                    <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
+                    <!--create edit user-->
+                    <span class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">Edit user</span>
+                </div>
+            </th>
+            <td class="px-6 py-4">
+                <div class="pl-3">
+                    <div class="text-base">57 1 Habarakada west thawalama</div>
+                    <div class="font-normal text-gray-500">0704436669</div>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <div class="flex items-center">
+                    <div class="ml-3">Aug 15, 2020</div>
+                    <span class="ml-3 font-medium text-slate-600 dark:text-slate-500">Created</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="ml-3">Feb 25, 2021</div>
+                    <span class="ml-3 font-medium text-slate-600 dark:text-slate-500">Last Modified</span>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <div class="pl-3">
+                    <div class="text-base font-semibold">200017802016</div>
+                    <div class="font-normal text-gray-500">NIC</div>
+                    <!--create edit user-->
+                    <span class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">See more..</span>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <div class="pl-3">
+                    <div class="text-base">1 Aug 2021</div>
+                    <div class="font-normal text-gray-500">Male</div>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <div class="pl-3 w-10">
+                    <div>Some remarks here</div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 
 <!--Libraries-->

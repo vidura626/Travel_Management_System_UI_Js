@@ -19,8 +19,9 @@ function login() {
      success: function (data, status, xhr) {
          // Handle success response here
          if(xhr.getResponseHeader("Authorization")!=null){
-             sessionStorage.setItem("Authorization", xhr.getResponseHeader("Authorization"));
+             localStorage.setItem("Authorization", xhr.getResponseHeader("Authorization"));
          }
+         history.back();
      },
      error: function (xhr, status, error) {
          // Handle error response here
