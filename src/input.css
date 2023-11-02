@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transition {
+    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    opacity: 0;
+    transform: translateY(1px);
+}
+.entering {
+    transition-timing-function: ease-in;
+    transition-duration: 150ms;
+    opacity: 100;
+    transform: translateY(0);
+}
