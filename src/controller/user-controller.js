@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    findAllUsers();
+    // findAllUsers();
     /**
      * Save User
      */
