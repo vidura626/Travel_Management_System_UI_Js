@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $("#form_reg_user").submit(function (e) {
         e.preventDefault();
@@ -34,7 +33,7 @@ $(document).ready(function () {
                     error: function (xhr, status, error) {
                         // Handle error response here
                         Swal.fire(
-                            'Deleted!',
+                            'Error!',
                             'Failed to register. ' + xhr.responseText,
                             'error'
                         )
