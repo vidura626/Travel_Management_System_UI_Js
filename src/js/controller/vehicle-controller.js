@@ -1,12 +1,17 @@
 $(document).ready(function () {
-    // findAllUsers();
+    findAllVehicles();
     /**
      * Save User
      */
-    $("#form_reg_user").submit(function (e) {
+    $("#form_vehicle_user").submit(function (e) {
         e.preventDefault();
 
         var formData = new FormData(this);
+
+        if (localStorage.getItem("Authorization") == null) {
+            window.location.href = "login.html";
+            return;
+        }
 
         Swal.fire({
             title: 'Are you sure?',
@@ -21,16 +26,19 @@ $(document).ready(function () {
             if (result.isConfirmed) {
 
                 $.ajax({
-                    url: 'http://localhost:8080/api/user/register',
+                    url: 'http://localhost:8080/api/vehicle/register',
                     type: 'POST',
                     data: formData,
+                    headers: {
+                        "Authorization": "Bearer "+localStorage.getItem("Authorization")
+                    },
                     processData: false,
                     contentType: false,
                     success: function (data) {
                         // Handle success response here
                         Swal.fire(
                             'Registered!',
-                            'You have been registered with user Id : ' + formData.get('userId') + '.',
+                            'You have been registered with vehicle Id : ' + formData.get('vehicleId') + '.',
                             'success'
                         )
                     },
@@ -57,13 +65,9 @@ $(document).ready(function () {
 /**
  * Find All Users
  */
-function findAllUsers() {
-    if(localStorage.getItem("Authorization") == null) {
-        window.location.href = "login.html";
-        return;
-    }
+function findAllVehicles() {
     $.ajax({
-        url: 'http://localhost:8080/api/user/all',
+        url: 'http://localhost:8080/api/vehicle/all',
         headers: {
             "Authorization": "Bearer "+localStorage.getItem("Authorization")
         },
