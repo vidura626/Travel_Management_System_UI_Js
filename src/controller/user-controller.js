@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // findAllUsers();
+    findAllUsers();
     /**
      * Save User
      */
@@ -97,7 +97,7 @@ function findAllUsers() {
                 <label>${user.userId}</label>
             </td>
             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                <img class="w-10 h-10 rounded-full" src="${user.name}" alt="${user.name}">
+                <img class="w-10 h-10 rounded-full" src="data:image/jpeg;base64,${user.proPic}" alt="${user.name}">
                 <div class="pl-3">
                     <div class="text-base font-semibold">${user.name}</div>
                     <div class="font-normal text-gray-500">${user.email}</div>
